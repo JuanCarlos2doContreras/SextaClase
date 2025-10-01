@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejemplo</title>
+    <style>
+    div#edgar{
+      width: 800px;
+        margin: 0 auto;
+        background: pink;
+      }
+      div#edgar div{
+        border: 1px solid black;
+        width: calc(46% - 2px);
+        padding: 1%;
+        margin: 1%;
+        float: left;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="edgar"></div>
+     <table id="volnut"></table>
+      <script>
+        const trabajos = [
+        {
+          title: "mi super trabajo",
+          category: "UX",
+          photo:"https://picsum.photos/id/48/300/300",
+          description:"este trabajo tan lindo lo hice en tal momento, para tal curso"
+        },
+        {
+          title: "mi super trabajo",
+          category: "UX",
+          photo:"https://picsum.photos/id/8/300/300",
+          description:"este trabajo tan lindo lo hice en tal momento, para tal curso"
+        },
+        {
+          title: "mi super trabajo",
+          category: "UX",
+          photo:"https://picsum.photos/id/30/300/300",
+          description:"este trabajo tan lindo lo hice en tal momento, para tal curso"
+        },
+        {
+          title: "mi super trabajo",
+          category: "UX",
+          photo:"https://picsum.photos/id/15/300/300",
+          description:"este trabajo tan lindo lo hice en tal momento, para tal curso"
+        },
+      ];
+
+       const parrafos = document.querySelector("#edgar");
+        trabajos.forEach((v) => {
+          parrafos.innerHTML +=
+           `<div class="${v.category}">
+           <h1>${v.title}</h1>
+           <img src="${v.photo}" />
+           <p>${v.description}</p>
+         </div>`;
+        });
+
+        parrafos.innerHTML += `<div class="fin"> Fin!!</div>`
+      </script>
+
+     
+    <script>
+      const tennis = [
+        {name:"Margaret Court", titles:24},
+        {name:"Serena Williams", titles:23},
+        {name:"Steffi Graf", titles:22},
+        {name:"Helen Wills", titles:19},
+        {name:"Chris Evert", titles:18},
+      ];
+
+      const parrafos = document.querySelector("#volnut");
+        tennis.forEach((v) => {
+          parrafos.innerHTML +=
+           `<tr>
+           <td>${v.name}</td>
+           <td><div style="width:${v.titles*10}px;background:pink;height:10px"> </div>
+         </td>
+         </tr>`;
+        })
+      
+     /*function emojis(n){
+        var imprime = "";
+        for(var x = 0; x < n; x++){
+          imprime += "🏆"
+        }
+        return imprime;
+      }*/
+    </script>
+  </body>
+</html>
